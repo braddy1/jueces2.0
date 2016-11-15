@@ -6,6 +6,8 @@
 	$nombre  = $_GET['nombre'];
 	$paterno = $_GET['paterno'];
 	$materno = $_GET['materno'];
+	
+
 
 	require_once "../model/Busqueda.class.php";
 	$busqueda = new Busqueda();
@@ -22,8 +24,9 @@
 
 		$html = str_replace("[[nombre]]",$nomCompleto, $gui);
 				
-		echo $html;
 		//printf("%s %s %s",$fila[0],$fila[1],$fila[2]);
 	}
+		echo $html;
+	
 
  ?>

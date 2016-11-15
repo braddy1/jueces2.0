@@ -1,4 +1,4 @@
-<?php 
+ <?php 
  class Busqueda{
 
 
@@ -11,9 +11,9 @@
 			return $this->conn;
 		}
 
- 		public function BusquedaPersona($nombres, $paterno , $materno){
+ 		public function BusquedaPersona($nombres, $paterno , $materno ){
  			
- 			$sql="SELECT nombres,a_paterno,a_materno, inicio, final, causa FROM jueces WHERE nombres LIKE '$nombres%' AND a_paterno LIKE '$paterno%' AND a_materno LIKE '$materno%'";
+ 			$sql="SELECT nombres,a_paterno,a_materno FROM jueces WHERE nombres LIKE '$nombres%' AND a_paterno LIKE '$paterno%' AND a_materno LIKE '$materno%'";
  				
 			$data = $this->conn->query($sql);
 			return $data;
@@ -26,6 +26,7 @@
 			return $data;
 
  		}
+ 	
 
  } 
 

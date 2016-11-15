@@ -3,6 +3,7 @@
 	$nombre  = $_GET['nombres'];
 	$paterno = $_GET['paterno'];
 	$materno = $_GET['materno'];
+	
 
 	require_once "../model/Busqueda.class.php";
 	$busqueda = new Busqueda();
@@ -15,12 +16,14 @@
 
 	$bus=$busqueda->BusquedaPersona($nombre, $paterno, $materno);
 	
-	while ($fila = $bus->fetch_array(MYSQLI_NUM)) {
-		$nomCompleto = $fila[0]." ".$fila[1]." ".$fila[2];
+		while ($fila = $bus->fetch_array(MYSQLI_NUM)) {
+		$nomCompleto = $fila[0]." ".$fila[1]." ".$fila[2]." ".$fila[3]." ".$fila[4]." ".$fila[5]." ".$fila[6]." ".$fila[7]." ".$fila[8]." ".$fila[9]." ".$fila[10]." ".$fila[11]." ".$fila[12];
 
 		$html = str_replace("[[datos]]",$nomCompleto, $gui);
 				
 		//printf("%s %s %s",$fila[0],$fila[1],$fila[2]);
 	}
-		echo $html;
+		echo $html;	
+
+	
  ?>
