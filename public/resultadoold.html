@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../public/vendor/jquery/jquery.js"></script>
+	
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			
+	       
+	        var jsonObj = $.parseJSON('{"id_persona":"11","nombres":"GALLEGOS","a_paterno":"","a_materno":"JULIAN","inicio":"14/01/1869","final":"05/12/1869","serie_documental":"ACTAS DE JUICIOS VERBALES","causa":"CIVIL","cant_folios":"68","nro_caja":"1","nro_libro":"012","procedencia":"ILAVE","provincia":"ILAVE","observacion":""}');
+
+	        var html = '<table border="1">';
+	        $.each(jsonObj, function(key, value){
+	            html += '<tr>';
+	            html += '<td>' + key + '</td>';
+	            html += '<td>' + value + '</td>';
+	            html += '</tr>';
+	        });
+	        html += '</table>';
+
+	        $('div').html(html);
+		});
+	
+	</script>
+</head>
+<body>
+	<div>[[datos]]</div>
+	
+</body>
+</html>
