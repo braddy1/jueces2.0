@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parsear o leer JSON con jQuery - EjemploCodigo</title>
+    <link rel="stylesheet" href="cssestilo.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>TABLA</h1>
+    </header>
+    <section>
+        <table class="grilla" id="tablajson">
+            <thead>
+                <th>idjueces</th>
+                <th>paterno</th>
+                <th>materno</th>
+                <th>nombres</th>
+                <th>fecInicio</th>
+                <th>fecFinal</th>
+                <th>serieDoc</th>
+                <th>causa</th>
+                <th>cantFolio</th>
+                <th>numCaja</th>
+                <th>numLibro</th>
+                <th>procedencia</th>
+                <th>provincia</th>
+                <th>observacion</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var url = "core/conexion.php";
+            $("#tablajson tbody").html("");
+            $.getJSON(url, function(clientes) {
+                $.each(clientes, function(i, cliente) {
+                    var newRow =
+                        "<tr>" + "<td>" + cliente.idjueces + "</td>" + "<td>" + cliente.paterno + "</td>" + "<td>" + cliente.materno + "</td>" + "<td>" + cliente.nombres + "</td>" + "<td>" + cliente.fecInicio + "</td>" + "<td>" + cliente.fecFinal + "</td>" + "<td>" + cliente.serieDoc + "</td>" + "<td>" + cliente.causa + "</td>" + "<td>" + cliente.cantFolio + "</td>" + "<td>" + cliente.numCaja + "</td>" + "<td>" + cliente.numLibro + "</td>" + "<td>" + cliente.procedencia + "</td>" + "<td>" + cliente.provincia + "</td>" + "<td>" + cliente.observacion + "</td>" + "</tr>";
+                    $(newRow).appendTo("#tablajson tbody");
+                });
+            });
+        });
+        </script>
+    </section>
+</body>
+
+</html>
